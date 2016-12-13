@@ -1,0 +1,22 @@
+{
+    "name": "michaeltintiuc/laravel-component",
+    "description": "Several starter interfaces and abstract classes for a laravel project",
+    "license": "MIT",
+    "keywords": ["laravel", "base", "interface", "abstract", "class", "helper"],
+    "authors": [
+        {
+            "name": "Michael Tintiuc",
+            "email": "contact@michaeltintiuc.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.6.4",
+        "illuminate/support": "5.3.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "MichaelT\\Component\\": "src"
+        }
+    },
+    "minimum-stability": "stable"
+}

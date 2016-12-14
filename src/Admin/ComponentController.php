@@ -66,4 +66,9 @@ abstract class ComponentController extends Controller
     {
         view()->share('heading', $heading);
     }
+
+    final protected function setSearchRoute($route)
+    {
+        view()->share('searchRoute', $route);
+    }
 }

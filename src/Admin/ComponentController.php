@@ -20,7 +20,7 @@ abstract class ComponentController extends Controller
     private $component;
     private $baseView;
 
-    function __construct(Request $request, ComponentRepo $repo)
+    public function __construct(Request $request, ComponentRepo $repo)
     {
         $this->request = $request;
         $this->repo = $repo;

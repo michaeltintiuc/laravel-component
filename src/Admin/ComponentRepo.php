@@ -15,22 +15,22 @@ abstract class ComponentRepo
         $this->model = $model;
     }
 
-    final protected function setComponent(string $component)
+    final protected function setComponent($component)
     {
         $this->component = ['component' => $component];
     }
 
-    final protected function setPerPage(int $perPage)
+    final protected function setPerPage($perPage)
     {
         $this->perPage = $perPage;
     }
 
-    final protected function getPerPage(): int
+    final protected function getPerPage()
     {
         return $this->perPage;
     }
 
-    final protected function error(string $type): string
+    final protected function error($type)
     {
         return trans("exceptions.$type", $this->component);
     }

@@ -41,7 +41,7 @@ abstract class ComponentController extends Controller
     {
         $params = $this->component + $params + ['count' => 1];
 
-         if ($params['count'] > 1)
+         if ($params['count'] > 1 || $params['count'] == 0)
             $params['component'] = str_plural($params['component']);
 
         return trans("info.$type", $params);

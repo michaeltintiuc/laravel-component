@@ -10,7 +10,7 @@ abstract class ComponentRepo
     private $component;
     private $perPage = 25;
 
-    function __construct(Model $model)
+    public function __construct(Model $model)
     {
         $this->model = $model;
     }

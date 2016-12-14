@@ -1,12 +1,12 @@
 <?php
 
-namespace MichaelT\Component\Admin;
+namespace MichaelT\Component\Admin\Contracts;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Pagination\LengthAwarePaginator;
 
-interface ComponentRepoContract
+interface RepoContract
 {
     public function all();
     public function paginate();

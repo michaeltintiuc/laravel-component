@@ -1,5 +1,4 @@
 <?php
-
 namespace MichaelT\Component\Admin\Contracts;
 
 interface SearchableContract

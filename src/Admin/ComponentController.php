@@ -1,12 +1,8 @@
 <?php
-
 namespace MichaelT\Component\Admin;
 
-use Illuminate\View\View;
 use Illuminate\Http\Request;
-use Illuminate\Support\MessageBag;
 use Illuminate\Routing\Controller;
-use Illuminate\Http\RedirectResponse;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
@@ -59,7 +55,7 @@ abstract class ComponentController extends Controller
 
     final protected function setTitle($title)
     {
-        view()->share('title', "TWA - Admin - $title");
+        view()->share('title', "Admin - $title");
     }
 
     final protected function setHeading($heading)

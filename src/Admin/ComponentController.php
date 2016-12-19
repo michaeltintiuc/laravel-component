@@ -1,12 +1,8 @@
 <?php
-
 namespace MichaelT\Component\Admin;
 
-use Illuminate\View\View;
 use Illuminate\Http\Request;
-use Illuminate\Support\MessageBag;
 use Illuminate\Routing\Controller;
-use Illuminate\Http\RedirectResponse;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
@@ -26,18 +22,18 @@ abstract class ComponentController extends Controller
         $this->repo = $repo;
     }
 
-    final protected function view(string $view): View
+    final protected function view($view)
     {
         return view($this->baseView.'.'.$view)
             ->withMessage($this->request->session()->get('message'));
     }
 
-    final protected function redirect(string $route, $params = []): RedirectResponse
+    final protected function redirect($route, $params = [])
     {
         return redirect()->route($this->baseView.'.'.$route, $params);
     }
 
-    final protected function info(string $type, array $params = []): string
+    final protected function info($type, array $params = [])
     {
         $params = $this->component + $params + ['count' => 1];
 
@@ -47,23 +43,28 @@ abstract class ComponentController extends Controller
         return trans("info.$type", $params);
     }
 
-    final protected function setComponent(string $component)
+    final protected function setComponent($component)
     {
         $this->component = ['component' => $component];
     }
 
-    final protected function setBaseView(string $baseView)
+    final protected function setBaseView($baseView)
     {
         $this->baseView = $baseView;
     }
 
-    final protected function setTitle(string $title)
+    final protected function setTitle($title)
     {
-        view()->share('title', "TWA - Admin - $title");
+        view()->share('title', "Admin - $title");
     }
 
-    final protected function setHeading(string $heading)
+    final protected function setHeading($heading)
     {
         view()->share('heading', $heading);
+    }
+
+    final protected function setSearchRoute($route)
+    {
+        view()->share('searchRoute', $route);
     }
 }

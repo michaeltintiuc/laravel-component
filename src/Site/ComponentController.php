@@ -10,4 +10,9 @@ abstract class ComponentController extends \MichaelT\Component\Admin\ComponentCo
         $this->request = $request;
         $this->repo = $repo;
     }
+
+    protected function view($view)
+    {
+        return view($this->baseView.'.'.$view);
+    }
 }

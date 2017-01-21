@@ -22,7 +22,7 @@ abstract class ComponentController extends Controller
         $this->repo = $repo;
     }
 
-    final protected function view($view)
+    protected function view($view)
     {
         return view($this->baseView.'.'.$view)
             ->withMessage($this->request->session()->get('message'));

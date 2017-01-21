@@ -12,9 +12,9 @@ abstract class ComponentController extends Controller
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
     protected $repo;
+    protected $baseView;
     private $request;
     private $component;
-    private $baseView;
 
     public function __construct(Request $request, ComponentRepo $repo)
     {

@@ -15,4 +15,9 @@ abstract class ComponentController extends \MichaelT\Component\Admin\ComponentCo
     {
         return view($this->baseView.'.'.$view);
     }
+
+    protected function setTitle($title)
+    {
+        view()->share('title', $title);
+    }
 }

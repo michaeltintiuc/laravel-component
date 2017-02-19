@@ -53,7 +53,7 @@ abstract class ComponentController extends Controller
         $this->baseView = $baseView;
     }
 
-    final protected function setTitle($title)
+    protected function setTitle($title)
     {
         view()->share('title', "Admin - $title");
     }

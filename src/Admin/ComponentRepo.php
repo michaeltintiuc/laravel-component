@@ -64,8 +64,6 @@ abstract class ComponentRepo
     /**
      * Get an error message by controller
      *
-     * @todo   Enable fallback
-     *
      * @param  string $type
      * @return string
      */

@@ -24,6 +24,7 @@ composer require michaeltintiuc/laravel-component
 
 `app/Components/Users/{ENV}/Requests` - holds form validation classes specific to an environment and component
 
+---
 ### Controllers
 ```php
 <?php
@@ -60,6 +61,7 @@ class UsersController extends ComponentController
 }
 ```
 
+---
 ### Repositories
 #### Interfaces _aka_ Contracts
 ```php
@@ -115,6 +117,7 @@ class UsersRepo extends ComponentRepo implements UsersRepoContract
 }
 ```
 
+---
 ### Routes
 #### Component
 ```php
@@ -137,6 +140,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
 });
 ```
 
+---
 ### Contribution
 
 Contributions, bug-reports, feature and pull requests are always welcome!

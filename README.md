@@ -6,6 +6,7 @@
 2. [Usage](#usage)
   1. [Directory Structure](#directory-structure)
   2. [Controllers](#controllers)
+  3. [Repositories](#repositories)
 
 ## Installation
 
@@ -50,5 +51,62 @@ class UsersController extends ComponentController
         return $this->view('index')
             ->with(compact('users'));
     }
+    
+    ...
+}
+```
+
+### Repositories
+#### Interfaces _aka_ Contracts
+```php
+<?php
+namespace Acme\Components\Users\Admin;
+
+use MichaelT\Component\Admin\Contracts\RepoContract;
+use MichaelT\Component\Admin\Contracts\SearchableContract;
+
+interface UsersRepoContract extends RepoContract, SearchableContract
+{
+}
+```
+
+#### Repository
+```php
+<?php
+namespace Acme\Components\Users\Admin;
+
+use Acme\Components\Users\User;
+use MichaelT\Component\Admin\ComponentRepo;
+use Acme\Components\Users\Admin\UsersRepoContract;
+
+class UsersRepo extends ComponentRepo implements UsersRepoContract
+{
+    public function __construct(User $model)
+    {
+        parent::__construct($model);
+        $this->setComponent('user');
+    }
+
+    public function all()
+    {
+        return $this->model->get();
+    }
+
+    public function paginate()
+    {
+        return $this->model
+            ->paginate($this->getPerPage());
+    }
+
+    public function find($id)
+    {
+        try {
+            return $this->model->findOrFail($id);
+        } catch (\Exception $e) {
+            throw new \FindAdminException($this->error('find'));
+        }
+    }
+    
+    ...
 }
 ```

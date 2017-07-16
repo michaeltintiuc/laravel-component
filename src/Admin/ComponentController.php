@@ -109,6 +109,8 @@ abstract class ComponentController extends Controller
     /**
      * Send the title to the view
      *
+     * @todo   Customize title prefix
+     *
      * @param  string $title
      * @return void
      */

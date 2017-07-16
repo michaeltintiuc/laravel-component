@@ -5,17 +5,26 @@ use Illuminate\Http\Request;
 
 abstract class ComponentController extends \MichaelT\Component\Admin\ComponentController
 {
+    /**
+     * {@inheritDoc}
+     */
     public function __construct(Request $request, ComponentRepo $repo)
     {
         $this->request = $request;
         $this->repo = $repo;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     protected function view($view)
     {
         return view($this->baseView.'.'.$view);
     }
 
+    /**
+     * {@inheritDoc}
+     */
     protected function setTitle($title)
     {
         view()->share('title', $title);

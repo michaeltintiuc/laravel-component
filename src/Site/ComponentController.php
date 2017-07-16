@@ -25,8 +25,8 @@ abstract class ComponentController extends \MichaelT\Component\Admin\ComponentCo
     /**
      * {@inheritDoc}
      */
-    protected function setTitle($title)
+    protected function setTitle($title, $prefix = '')
     {
-        view()->share('title', $title);
+        parent::setTitle($title, $prefix);
     }
 }

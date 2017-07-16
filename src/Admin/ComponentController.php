@@ -109,14 +109,13 @@ abstract class ComponentController extends Controller
     /**
      * Send the title to the view
      *
-     * @todo   Customize title prefix
-     *
      * @param  string $title
+     * @param  string $prefix
      * @return void
      */
-    protected function setTitle($title)
+    protected function setTitle($title, $prefix = 'Admin')
     {
-        view()->share('title', "Admin - $title");
+        view()->share('title', "$prefix - $title");
     }
 
     /**

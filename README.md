@@ -27,7 +27,6 @@ composer require michaeltintiuc/laravel-component
 ---
 ### Controllers
 ```php
-<?php
 namespace Acme\Components\Users\Admin;
 
 use Illuminate\Http\Request;
@@ -65,7 +64,6 @@ class UsersController extends ComponentController
 ### Repositories
 #### Interfaces _aka_ Contracts
 ```php
-<?php
 namespace Acme\Components\Users\Admin;
 
 use MichaelT\Component\Admin\Contracts\RepoContract;
@@ -78,7 +76,6 @@ interface UsersRepoContract extends RepoContract, SearchableContract
 
 #### Repository
 ```php
-<?php
 namespace Acme\Components\Users\Admin;
 
 use Acme\Components\Users\User;
@@ -121,8 +118,6 @@ class UsersRepo extends ComponentRepo implements UsersRepoContract
 ### Routes
 #### Component
 ```php
-<?php
-
 Route::group(['namespace' => 'Acme\Components\Users\Admin'], function () {
     Route::resource('users', 'UsersController');
 });
@@ -130,9 +125,6 @@ Route::group(['namespace' => 'Acme\Components\Users\Admin'], function () {
 
 #### Loading routes
 ```php
-<?php
-
-// Back-end routes
 Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
     Route::group(['middleware' => ['auth']], function () {
         require_once app_path().'/Components/Users/Admin/routes.php';

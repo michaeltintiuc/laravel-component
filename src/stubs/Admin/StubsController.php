@@ -1,11 +1,11 @@
 <?php
-namespace Acme\Components\Stubs\Admin;
+namespace App\Components\Stubs\Admin;
 
 use Illuminate\Http\Request;
 use MichaelT\Components\Admin\ComponentController;
-use Acme\Components\Stubs\Admin\Requests\StoreStubsRequest;
-use Acme\Components\Stubs\Admin\Requests\UpdateStubsRequest;
-use Acme\Components\Stubs\Admin\Requests\DestroyStubsRequest;
+use App\Components\Stubs\Admin\Requests\StoreStubsRequest;
+use App\Components\Stubs\Admin\Requests\UpdateStubsRequest;
+use App\Components\Stubs\Admin\Requests\DestroyStubsRequest;
 
 class StubsController extends ComponentController
 {
@@ -104,7 +104,7 @@ class StubsController extends ComponentController
     /**
      * Save stub
      *
-     * @param  \Acme\Components\Stubs\Admin\StoreStubsRequest $request
+     * @param  \App\Components\Stubs\Admin\StoreStubsRequest $request
      * @return \Illuminate\Http\RedirectResponse
      */
     public function store(StoreStubsRequest $request)
@@ -118,7 +118,7 @@ class StubsController extends ComponentController
     /**
      * Update stub
      *
-     * @param  \Acme\Components\Stubs\Admin\UpdateStubsRequest $request
+     * @param  \App\Components\Stubs\Admin\UpdateStubsRequest $request
      * @param  int $id
      * @return \Illuminate\Http\RedirectResponse
      */
@@ -147,7 +147,7 @@ class StubsController extends ComponentController
     /**
      * Destroy multiple stubs
      *
-     * @param  \Acme\Components\Stubs\Admin\DestroyStubsRequest $request
+     * @param  \App\Components\Stubs\Admin\DestroyStubsRequest $request
      * @return \Illuminate\Http\RedirectResponse
      */
     public function destroyMultiple(DestroyStubsRequest $request)

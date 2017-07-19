@@ -13,7 +13,7 @@ class StubsController extends ComponentController
      * Initialize StubsController
      *
      * @param  \Illuminate\Http\Request $request
-     * @param  \Acmke\Components\Stubs\Admin\StubsRepo $repo
+     * @param  \App\Components\Stubs\Admin\StubsRepo $repo
      * @return void
      */
     public function __construct(Request $request, StubsRepo $repo)

@@ -57,19 +57,14 @@ class StubsRepo extends ComponentRepo implements StubsRepoContract
     }
 
     /**
-     * Get all stubs by search query
+     * Search all stubs by query
      *
      * @param  string $query
      * @return \Illuminate\Support\Collection
      */
     public function search($query)
     {
-        return $this->model
-            ->where(function ($q) use ($query) {
-                $q->where('name', 'like', "%$query%")
-                    ->orWhere('email', 'like', "%$query%");
-            })
-            ->get();
+        return $this->model->where('name', 'like', "%$query%")->get();
     }
 
     /**

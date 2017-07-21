@@ -11,13 +11,6 @@ interface RepoContract
     public function all();
 
     /**
-     * Get paginated results
-     *
-     * @return \Illuminate\Pagination\LengthAwarePaginator
-     */
-    public function paginate();
-
-    /**
      * Find a Model by ID
      *
      * @param  int $id

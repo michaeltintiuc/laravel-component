@@ -48,12 +48,4 @@ interface RepoContract
      * @return \Illuminate\Database\Eloquent\Model
      */
     public function update($id, array $input);
-
-    /**
-     * Delete Models by ID returning a number of items removed
-     *
-     * @param  array $ids
-     * @return int
-     */
-    public function destroy(array $ids);
 }

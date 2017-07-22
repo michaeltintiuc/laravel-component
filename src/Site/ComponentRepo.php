@@ -1,6 +1,8 @@
 <?php
 namespace MichaelT\Component\Site;
 
-abstract class ComponentRepo extends \MichaelT\Component\Admin\ComponentRepo
+use \MichaelT\Component\Admin\ComponentRepo;
+
+abstract class ComponentRepo extends ComponentRepo
 {
 }

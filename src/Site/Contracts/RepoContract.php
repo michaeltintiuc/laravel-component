@@ -11,10 +11,5 @@ interface RepoContract
     /**
      * {@inheritDoc}
      */
-    public function paginate();
-
-    /**
-     * {@inheritDoc}
-     */
     public function find($id);
 }

@@ -8,7 +8,7 @@ abstract class ComponentRepo
     /**
      * @var \Illuminate\Database\Eloquent\Model
      */
-    protected $model;
+    private $model;
 
     /**
      * @var string
@@ -27,6 +27,26 @@ abstract class ComponentRepo
     public function __construct(Model $model)
     {
         $this->model = $model;
+    }
+
+    /**
+     * Create a new Model
+     *
+     * @return \Illuminate\Database\Eloquent\Model
+     */
+    protected function create()
+    {
+        return new $this->model();
+    }
+
+    /**
+     * Get model
+     *
+     * @return \Illuminate\Database\Eloquent\Model
+     */
+    public function getModel()
+    {
+        return $this->model();
     }
 
     /**

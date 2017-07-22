@@ -19,13 +19,6 @@ interface RepoContract
     public function find($id);
 
     /**
-     * Create a new Model
-     *
-     * @return \Illuminate\Database\Eloquent\Model
-     */
-    public function create();
-
-    /**
      * Save a newly created Model
      *
      * @param  array $input

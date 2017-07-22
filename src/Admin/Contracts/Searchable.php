@@ -1,7 +1,7 @@
 <?php
 namespace MichaelT\Component\Admin\Contracts;
 
-interface SearchableContract
+interface Searchable
 {
     /**
      * Search Models

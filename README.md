@@ -67,9 +67,9 @@ class UsersController extends ComponentController
 namespace Acme\Components\Users\Admin;
 
 use MichaelT\Component\Admin\Contracts\RepoContract;
-use MichaelT\Component\Admin\Contracts\SearchableContract;
+use MichaelT\Component\Admin\Contracts\Searchable;
 
-interface UsersRepoContract extends RepoContract, SearchableContract
+interface UsersRepoContract extends RepoContract, Searchable
 {
 }
 ```

@@ -1,7 +1,7 @@
 <?php
 namespace MichaelT\Component\Admin\Contracts;
 
-interface PaginatableContract
+interface HasPages
 {
     /**
      * Get paginated results

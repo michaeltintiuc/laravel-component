@@ -1,7 +1,7 @@
 <?php
 namespace MichaelT\Component\Admin\Contracts;
 
-interface DestroyableContract
+interface CanBeDestroyed
 {
     /**
      * Delete Models by ID returning a number of items removed

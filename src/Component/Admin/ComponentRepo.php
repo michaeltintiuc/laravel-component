@@ -40,6 +40,14 @@ abstract class ComponentRepo
     }
 
     /**
+     * Find a Model by ID
+     *
+     * @param  mixed $id
+     * @return \Illuminate\Database\Eloquent\Model
+     */
+    abstract public function find($id);
+
+    /**
      * Get model
      *
      * @return \Illuminate\Database\Eloquent\Model

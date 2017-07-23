@@ -42,14 +42,14 @@ class StubsRepo extends ComponentRepo implements StubsRepoContract
     /**
      * Find a stub by ID
      *
-     * @param  int $id
+     * @param  string $slug
      * @return \Illuminate\Database\Eloquent\Model
      * @throws \FindSiteException
      */
-    public function find($id)
+    public function find($slug)
     {
         try {
-            return $this->getModel()->findOrFail($id);
+            return $this->getModel()->where('slug', $slug)->firstOrFail();
         } catch (\Exception $e) {
             throw new \FindSiteException($this->error('find'));
         }

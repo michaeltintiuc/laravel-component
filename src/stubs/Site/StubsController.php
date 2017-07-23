@@ -58,12 +58,12 @@ class StubsController extends ComponentController
     /**
      * Create stub
      *
-     * @param
+     * @param  string $slug
      * @return \Illuminate\View\View
      */
-    public function show($id)
+    public function show($slug)
     {
-        $stub = $this->repo->find((int) $id);
+        $stub = $this->repo->find($slug);
         $this->setTitle("Stubs - $stub->name");
         $this->setHeading("Viewing stub $stub->name");
 

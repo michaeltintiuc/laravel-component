@@ -27,7 +27,7 @@ class StubsRepo extends ComponentRepo implements StubsRepoContract
      */
     public function all()
     {
-        return $this->model->get();
+        return $this->getModel()->get();
     }
 
     /**
@@ -37,7 +37,7 @@ class StubsRepo extends ComponentRepo implements StubsRepoContract
      */
     public function paginate()
     {
-        return $this->model->paginate($this->getPerPage());
+        return $this->getModel()->paginate($this->getPerPage());
     }
 
     /**
@@ -50,7 +50,7 @@ class StubsRepo extends ComponentRepo implements StubsRepoContract
     public function find($id)
     {
         try {
-            return $this->model->findOrFail($id);
+            return $this->getModel()->findOrFail($id);
         } catch (\Exception $e) {
             throw new \FindAdminException($this->error('find'));
         }
@@ -64,17 +64,7 @@ class StubsRepo extends ComponentRepo implements StubsRepoContract
      */
     public function search($query)
     {
-        return $this->model->where('name', 'like', "%$query%")->get();
-    }
-
-    /**
-     * Create new stub
-     *
-     * @return \Illuminate\Database\Eloquent\Model
-     */
-    public function create()
-    {
-        return new $this->model;
+        return $this->getModel()->where('name', 'like', "%$query%")->get();
     }
 
     /**
@@ -89,7 +79,7 @@ class StubsRepo extends ComponentRepo implements StubsRepoContract
         DB::beginTransaction();
 
         try {
-            $stub = $this->model->create($input);
+            $stub = $this->getModel()->create($input);
         } catch (\Exception $e) {
             DB::rollback();
             throw new \StoreAdminException($this->error('store'));
@@ -110,7 +100,7 @@ class StubsRepo extends ComponentRepo implements StubsRepoContract
     public function update($id, array $input)
     {
         try {
-            $stub = $this->model->findOrFail($id);
+            $stub = $this->getModel()->findOrFail($id);
             $stub->update($input);
         } catch (\Exception $e) {
             throw new \UpdateAdminException($this->error('update'));
@@ -139,7 +129,7 @@ class StubsRepo extends ComponentRepo implements StubsRepoContract
         }
 
         try {
-            return $this->model->destroy($ids);
+            return $this->getModel()->destroy($ids);
         } catch (\Exception $e) {
             throw new \DestroyAdminException($this->error('destroy'));
         }

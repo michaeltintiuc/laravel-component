@@ -1,5 +1,5 @@
 <?php
-namespace MichaelT\Component\Admin\Contracts;
+namespace MichaelT\Contracts;
 
 interface HasPages
 {

@@ -1,11 +1,19 @@
 <?php
 namespace App\Components\Stubs\Admin;
 
-use MichaelT\Component\Admin\Contracts\RepoContract;
-use MichaelT\Component\Admin\Contracts\CanBeDestroyed;
-use MichaelT\Component\Admin\Contracts\Searchable;
-use MichaelT\Component\Admin\Contracts\HasPages;
+use MichaelT\Contracts\RepoContract;
+use MichaelT\Contracts\CanBeCreated;
+use MichaelT\Contracts\CanBeUpdated;
+use MichaelT\Contracts\CanBeDestroyed;
+use MichaelT\Contracts\Searchable;
+use MichaelT\Contracts\HasPages;
 
-interface StubsRepoContract extends RepoContract, CanBeDestroyed, Searchable, HasPages
+interface StubsRepoContract extends
+    RepoContract,
+    CanBeCreated,
+    CanBeUpdated,
+    CanBeDestroyed,
+    Searchable,
+    HasPages
 {
 }

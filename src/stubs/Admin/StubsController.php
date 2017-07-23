@@ -2,7 +2,7 @@
 namespace App\Components\Stubs\Admin;
 
 use Illuminate\Http\Request;
-use MichaelT\Components\Admin\ComponentController;
+use MichaelT\Component\Admin\ComponentController;
 use App\Components\Stubs\Admin\Requests\StoreStubsRequest;
 use App\Components\Stubs\Admin\Requests\UpdateStubsRequest;
 use App\Components\Stubs\Admin\Requests\DestroyStubsRequest;

@@ -1,7 +1,9 @@
 <?php
-namespace MichaelT\Component;
+namespace MichaelT\Requests;
 
-abstract class BaseRequest extends \Illuminate\Foundation\Http\FormRequest
+use Illuminate\Foundation\Http\FormRequest;
+
+abstract class BaseRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.

@@ -2,9 +2,7 @@
 namespace App\Components\Stubs\Site;
 
 use Illuminate\Http\Request;
-use MichaelT\Components\Site\ComponentController;
-use App\Components\Stubs\Site\Requests\StoreStubsRequest;
-use App\Components\Stubs\Site\Requests\UpdateStubsRequest;
+use MichaelT\Component\Site\ComponentController;
 
 class StubsController extends ComponentController
 {
@@ -60,20 +58,6 @@ class StubsController extends ComponentController
     /**
      * Create stub
      *
-     * @return \Illuminate\View\View
-     */
-    public function create()
-    {
-        $stub = $this->repo->create();
-        $this->setTitle('Stubs - New');
-        $this->setHeading('Creating stub');
-
-        return $this->view('create')->with(compact('stub'));
-    }
-
-    /**
-     * Create stub
-     *
      * @param
      * @return \Illuminate\View\View
      */
@@ -84,48 +68,5 @@ class StubsController extends ComponentController
         $this->setHeading("Viewing stub $stub->name");
 
         return $this->view('show')->with(compact('stub'));
-    }
-
-    /**
-     * Edit stub
-     *
-     * @return \Illuminate\View\View
-     */
-    public function edit($id)
-    {
-        $stub = $this->repo->find((int) $id);
-        $this->setTitle("Stubs - $stub->name");
-        $this->setHeading("Editing stub $stub->name");
-
-        return $this->view('edit')->with(compact('stub'));
-    }
-
-    /**
-     * Save stub
-     *
-     * @param  \App\Components\Stubs\Site\StoreStubsRequest $request
-     * @return \Illuminate\Http\RedirectResponse
-     */
-    public function store(StoreStubsRequest $request)
-    {
-        $stub = $this->repo->store($request->all());
-
-        return $this->redirect('show', $stub->id)
-            ->withMessage($this->info('store'));
-    }
-
-    /**
-     * Update stub
-     *
-     * @param  \App\Components\Stubs\Site\UpdateStubsRequest $request
-     * @param  int $id
-     * @return \Illuminate\Http\RedirectResponse
-     */
-    public function update(UpdateStubsRequest $request, $id)
-    {
-        $stub = $this->repo->update($id, $request->all());
-
-        return $this->redirect('show', $stub->id)
-            ->withMessage($this->info('update'));
     }
 }

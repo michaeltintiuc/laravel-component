@@ -1,5 +1,5 @@
 <?php
-namespace MichaelT\Component\Admin\Contracts;
+namespace MichaelT\Contracts;
 
 interface RepoContract
 {
@@ -17,21 +17,4 @@ interface RepoContract
      * @return \Illuminate\Database\Eloquent\Model
      */
     public function find($id);
-
-    /**
-     * Save a newly created Model
-     *
-     * @param  array $input
-     * @return \Illuminate\Database\Eloquent\Model
-     */
-    public function store(array $input);
-
-    /**
-     * Update a Model by ID
-     *
-     * @param  int $id
-     * @param  array $input
-     * @return \Illuminate\Database\Eloquent\Model
-     */
-    public function update($id, array $input);
 }

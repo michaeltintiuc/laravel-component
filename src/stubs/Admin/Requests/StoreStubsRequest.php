@@ -1,7 +1,7 @@
 <?php
 namespace App\Components\Stubs\Admin\Requests;
 
-use MichaelT\Component\BaseRequest;
+use MichaelT\Requests\BaseRequest;
 
 class StoreStubsRequest extends BaseRequest
 {

@@ -2,6 +2,7 @@
 namespace MichaelT\Component\Commands;
 
 use Illuminate\Console\Command;
+use Illuminate\Filesystem\Filesystem;
 
 class ComponentMakeCommand extends Command
 {
@@ -18,6 +19,13 @@ class ComponentMakeCommand extends Command
      * @var string
      */
     protected $description = 'Generate component structure and routes';
+
+    /**
+     * The filesystem instance.
+     *
+     * @var \Illuminate\Filesystem\Filesystem
+     */
+    protected $files;
 
     /**
      * Create a new command instance.
@@ -37,5 +45,33 @@ class ComponentMakeCommand extends Command
     public function handle()
     {
         // TODO
+    }
+
+    private function fileExists($file)
+    {
+        // TODO: parse file
+        $this->files->exists($file);
+    }
+
+    /**
+     * Get the clean component name from input
+     * 
+     * @return string
+     */
+    private function getName()
+    {
+        return trim($this->argument('name'));
+    }
+
+    /**
+     * Get the console command arguments.
+     *
+     * @return array
+     */
+    protected function getArguments()
+    {
+        return [
+            ['name', InputArgument::REQUIRED, 'The name of the component'],
+        ];
     }
 }

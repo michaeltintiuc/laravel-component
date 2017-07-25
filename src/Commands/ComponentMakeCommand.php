@@ -11,7 +11,7 @@ class ComponentMakeCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'make:component {component}';
+    protected $signature = 'make:component {name}';
 
     /**
      * The console command description.
@@ -49,8 +49,51 @@ class ComponentMakeCommand extends Command
 
     private function fileExists($file)
     {
-        // TODO: parse file
+        $modelName = $this->getModelName();
+        $className = $this->getClassName();
+        // TODO: parse stubs
+        // TODO: generate files
         $this->files->exists($file);
+    }
+
+    /**
+     * Get the model name
+     * 
+     * @return string
+     */
+    private function getModelName()
+    {
+        return ucfirst($this->getNameSingular());
+    }
+
+    /**
+     * Get the class name
+     * 
+     * @return string
+     */
+    private function getClassName()
+    {
+        return ucfirst($this->getNamePlural());
+    }
+
+    /**
+     * Get the plural form of the component name from input
+     * 
+     * @return string
+     */
+    private function getNamePlural()
+    {
+        return str_plural($this->getName());
+    }
+
+    /**
+     * Get the singular form of the component name from input
+     * 
+     * @return string
+     */
+    private function getNameSingular()
+    {
+        return str_singular($this->getName());
     }
 
     /**
@@ -60,7 +103,7 @@ class ComponentMakeCommand extends Command
      */
     private function getName()
     {
-        return trim($this->argument('name'));
+        return trim(strtolower($this->argument('name')));
     }
 
     /**

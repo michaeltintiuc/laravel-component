@@ -54,7 +54,7 @@ abstract class ComponentRepo
      */
     public function getModel()
     {
-        return $this->model();
+        return $this->model;
     }
 
     /**

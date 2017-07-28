@@ -16,8 +16,8 @@
     "autoload": {
         "psr-4": {
             "MichaelT\\Component\\": "src/Component",
-	    "MichaelT\\Contracts\\": "src/Contracts",
-	    "MichaelT\\Requests\\": "src/Requests"
+            "MichaelT\\Contracts\\": "src/Contracts",
+            "MichaelT\\Requests\\": "src/Requests"
         }
     },
     "minimum-stability": "stable"

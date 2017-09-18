@@ -2,6 +2,7 @@
 namespace MichaelT\Component\Commands;
 
 use Illuminate\Console\Command;
+use Illuminate\Support\Composer;
 use Illuminate\Filesystem\Filesystem;
 
 class ComponentMakeCommand extends Command
@@ -28,13 +29,25 @@ class ComponentMakeCommand extends Command
     protected $files;
 
     /**
-     * Create a new command instance.
+     * The Composer instance.
      *
+     * @var \Illuminate\Support\Composer
+     */
+    protected $composer;
+
+    /**
+     * Create a new command instance.
+     * 
+     * @param  \Illuminate\Filesystem\Filesystem $files
+     * @param  \Illuminate\Support\Composer $composer
      * @return void
      */
-    public function __construct()
+    public function __construct(Filesystem $files, Composer $composer)
     {
         parent::__construct();
+
+        $this->files = $files;
+        $this->composer = $composer;
     }
 
     /**
@@ -51,8 +64,10 @@ class ComponentMakeCommand extends Command
     {
         $modelName = $this->getModelName();
         $className = $this->getClassName();
+
         // TODO: parse stubs
         // TODO: generate files
+
         $this->files->exists($file);
     }
 
@@ -104,17 +119,5 @@ class ComponentMakeCommand extends Command
     private function getName()
     {
         return trim(strtolower($this->argument('name')));
-    }
-
-    /**
-     * Get the console command arguments.
-     *
-     * @return array
-     */
-    protected function getArguments()
-    {
-        return [
-            ['name', InputArgument::REQUIRED, 'The name of the component'],
-        ];
     }
 }

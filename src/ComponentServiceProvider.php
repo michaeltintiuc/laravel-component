@@ -2,13 +2,8 @@
 namespace MichaelT\Component;
 
 use Illuminate\Support\ServiceProvider;
+use MichaelT\Component\Commands\ComponentMakeCommand;
 
-/**
- * Component ServiceProvider
- *
- * @package michaeltintiuc/laravel-permy
- * @author Michael Tintiuc
- */
 class ComponentServiceProvider extends ServiceProvider
 {
     /**
@@ -19,9 +14,7 @@ class ComponentServiceProvider extends ServiceProvider
     public function boot()
     {
         if ($this->app->runningInConsole()) {
-            $this->commands([
-                MichaelT\Component\Commands\ComponentMakeCommand::class
-            ]);
+            $this->commands([ComponentMakeCommand::class]);
         }
     }
 }

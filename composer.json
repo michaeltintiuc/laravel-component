@@ -20,5 +20,12 @@
             "MichaelT\\Requests\\": "src/Requests"
         }
     },
-    "minimum-stability": "stable"
+    "minimum-stability": "stable",
+    "extra": {
+        "laravel": {
+            "providers": [
+                "MichaelT\\Component\\ComponentServiceProvider"
+            ]
+        }
+    }
 }

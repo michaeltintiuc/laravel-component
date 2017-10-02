@@ -37,7 +37,7 @@ class ComponentMakeCommand extends Command
 
     /**
      * Create a new command instance.
-     * 
+     *
      * @param  \Illuminate\Filesystem\Filesystem $files
      * @param  \Illuminate\Support\Composer $composer
      * @return void
@@ -73,7 +73,7 @@ class ComponentMakeCommand extends Command
 
     /**
      * Get the model name
-     * 
+     *
      * @return string
      */
     private function getModelName()
@@ -83,7 +83,7 @@ class ComponentMakeCommand extends Command
 
     /**
      * Get the class name
-     * 
+     *
      * @return string
      */
     private function getClassName()
@@ -93,7 +93,7 @@ class ComponentMakeCommand extends Command
 
     /**
      * Get the plural form of the component name from input
-     * 
+     *
      * @return string
      */
     private function getNamePlural()
@@ -103,7 +103,7 @@ class ComponentMakeCommand extends Command
 
     /**
      * Get the singular form of the component name from input
-     * 
+     *
      * @return string
      */
     private function getNameSingular()
@@ -113,7 +113,7 @@ class ComponentMakeCommand extends Command
 
     /**
      * Get the clean component name from input
-     * 
+     *
      * @return string
      */
     private function getName()

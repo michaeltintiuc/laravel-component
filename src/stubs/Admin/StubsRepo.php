@@ -94,7 +94,7 @@ class StubsRepo extends ComponentRepo implements StubsRepoContract
      *
      * @param  int $id
      * @param  array $input
-     * @return \Illuminate\Database\Eloquent\Model 
+     * @return \Illuminate\Database\Eloquent\Model
      * @throws \UpdateAdminException
      */
     public function update($id, array $input)

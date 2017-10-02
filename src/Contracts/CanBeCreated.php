@@ -9,5 +9,5 @@ interface CanBeCreated
      * @param  array $input
      * @return \Illuminate\Database\Eloquent\Model
      */
-    public function store(array $input);    
+    public function store(array $input);
 }

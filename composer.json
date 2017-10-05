@@ -13,12 +13,23 @@
         "php": ">=5.6.4",
         "illuminate/support": "5.3.*"
     },
+    "require-dev": {
+        "phpunit/phpunit": "~5.0",
+        "mockery/mockery": "0.9.*",
+        "orchestra/testbench": "~3.3"
+    },
     "autoload": {
         "psr-4": {
             "MichaelT\\Component\\": "src/Component",
             "MichaelT\\Contracts\\": "src/Contracts",
             "MichaelT\\Requests\\": "src/Requests"
         }
+    },
+    "autoload-dev": {
+      "psr-4": {
+        "Tests\\": "tests/",
+        "App\\Components\\Stubs\\": "src/stubs"
+      }
     },
     "minimum-stability": "stable",
     "extra": {

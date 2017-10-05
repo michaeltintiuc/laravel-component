@@ -2,9 +2,9 @@
 namespace MichaelT\Component\Site;
 
 use Illuminate\Http\Request;
-use MichaelT\Component\Admin\ComponentController;
+use MichaelT\Component\Admin\ComponentController as AdminComponentController;
 
-abstract class ComponentController extends ComponentController
+abstract class ComponentController extends AdminComponentController
 {
     /**
      * {@inheritDoc}
